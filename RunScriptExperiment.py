@@ -54,3 +54,11 @@ run.register_model( model_name='classification_model',
                     tags={'data-format': 'CSV'},
                     model_framework=Model.Framework.SCIKITLEARN,
                     model_framework_version='0.20.3')
+
+
+#Viewing registered models
+#You can view registered models in Azure Machine Learning studio.
+#You can also use the Model object to retrieve details of registered models like this:
+for model in Model.list(ws):
+    # Get model name and auto-generated version
+    print(model.name, 'version:', model.version)
